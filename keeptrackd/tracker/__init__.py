@@ -22,6 +22,10 @@ from .comicryu import (
         ComicRyuTracker
         )
 
+from .securitynext import (
+        SecurityNextTracker
+        )
+
 
 trackers = [
         Twi4Tracker,
@@ -29,6 +33,7 @@ trackers = [
         WebAceTracker,
         TonarinoYJTracker,
         ComicRyuTracker,
+        SecurityNextTracker,
         Tracker
     ]
 
