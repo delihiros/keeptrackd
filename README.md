@@ -10,7 +10,7 @@ Requires Python 3.7+ and Google Chrome
 ```
 git clone https://github.com/delihiros/keeptrackd.git
 cd keeptrackd
-python setup.py -e .
+pip install -e .
 ```
 
 
