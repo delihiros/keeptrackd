@@ -29,7 +29,7 @@ setup(
     keywords='web crawler utilities tracker checker',
 
 
-    install_requires=['selenium', 'chromedriver-binary'],
+    install_requires=['selenium', 'chromedriver-binary', 'requests'],
 
     packages=['keeptrackd'],
 

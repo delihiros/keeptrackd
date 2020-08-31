@@ -1,6 +1,6 @@
 import json
 
-SETTINGS_FILENAME = 'settings.json'
+SETTINGS_FILENAME = '/Users/delihiros/works/keeptrackd/settings.json'
 
 def add(key, value):
     values = None

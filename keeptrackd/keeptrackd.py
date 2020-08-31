@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+from multiprocessing import Pool
 import getpass
 
 from keeptrackd import (
@@ -20,13 +21,23 @@ class KeepTrackd:
         self.db.remove(url)
 
     def check(self, url):
-        track = tracker.get_tracker(url)
-        if track.check_update():
-            track.postprocess()
+        try:
+            track = tracker.get_tracker(url)
+            if track.check_update():
+                track.postprocess()
+        except Exception as e:
+            print("ERROR:", url)
+            print(track)
+            print(e)
 
     def check_all(self):
-        for target in self.db.get_all():
-            self.check(target[0])
+        # print(self.db.get_all())
+        # print([t[0] for t in self.db.get_all()])
+        targets = [t[0] for t in self.db.get_all()]
+        for t in targets:
+            self.check(t)
+        # with Pool(processes=8) as pool:
+        #     pool.map(self.check, targets)
 
     def list(self):
         return [target[0] for target in self.db.get_all()]

@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 import chromedriver_binary
 
@@ -19,6 +20,10 @@ class Browser:
 
     def get(self, url):
         self.driver.get(url)
+
+    def wait_for(self, css_selector):
+        elem = WebDriverWait(self.driver).until(lambda d: d.find_element_by_css_selector(css_selector))
+        return elem
 
     def page_source(self):
         return self.driver.page_source

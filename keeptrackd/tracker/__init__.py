@@ -26,6 +26,9 @@ from .securitynext import (
         SecurityNextTracker
         )
 
+from .shonenmagazine import (
+        ShonenMagazineTracker
+        )
 
 trackers = [
         Twi4Tracker,
@@ -34,6 +37,7 @@ trackers = [
         TonarinoYJTracker,
         ComicRyuTracker,
         SecurityNextTracker,
+        ShonenMagazineTracker,
         Tracker
     ]
 

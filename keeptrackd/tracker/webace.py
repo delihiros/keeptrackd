@@ -35,7 +35,8 @@ class WebAceTracker(tracker.common.Tracker):
     def _get_latest(self):
         self.browser.get(self.url)
         self.page_source = self.browser.page_source
-        self.latest = self.browser.find_element_by_css_selector('#read > div.inner.align-left.inner-news > ul > li:first-child > a > div > div > p').text
+        self.latest = self.browser.find_element_by_css_selector('#read > div.inner.align-left.inner-news > ul > li:nth-child(1) > a > div > div > p').text
+        self.latest = self.browser.find_element_by_css_selector('#read > div.inner.align-left.inner-news > ul > li:nth-child(1) > a > div > div > p').text
         return self.latest
 
     def _get_last_time(self):
